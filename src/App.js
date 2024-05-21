@@ -2,11 +2,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import Category from "./Category/Category";
 import SubCategoryDetails from "./SubCategory/SubCategoryDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FruitProvider } from "./fruitContext";
 import { Button } from "react-bootstrap";
 
 function App() {
+  useEffect(() => {
+    document.title = "Fruits Details";
+  }, []);
   const [selectedCategory, setSelectedCategoryDetails] = useState({});
   const onSubCategoryClick = (eachSubCategoryDetails) => {
     console.log("SubCategoryClick", eachSubCategoryDetails);
